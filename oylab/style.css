@@ -1,0 +1,221 @@
+/* --- Глобальные настройки и переменные --- */
+:root {
+    --primary-color: #C80000;
+    --text-light: #FFFFFF;
+    --text-dark: #000000;
+    --background-light: #FFFFFF;
+    --background-grey: #f8f9fa;
+    --border-color-light: rgba(255, 255, 255, 0.2);
+    --border-color-dark: rgba(0, 0, 0, 0.15);
+    
+    --font-heading: 'Raleway', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); font-weight: 400; line-height: 1.5; color: var(--text-dark); background-color: var(--background-light); }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+.section-padding { padding: 112px 0; }
+.section-title { text-align: center; font-size: 18px; font-weight: 700; margin-bottom: 48px; }
+
+/* --- Универсальные компоненты --- */
+.btn { display: inline-block; padding: 10px 24px; text-decoration: none; font-weight: 500; font-size: 16px; border: 1px solid transparent; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.btn-primary { background-color: var(--primary-color); border-color: var(--primary-color); color: var(--text-light); }
+.btn-light { background-color: var(--text-light); border-color: var(--text-light); color: var(--text-dark); }
+.btn-outline-light { background-color: transparent; border-color: var(--border-color-light); color: var(--text-light); }
+.btn-outline-dark { background-color: transparent; border-color: var(--border-color-dark); color: var(--text-dark); }
+.btn-link { color: var(--text-dark); font-weight: 500; text-decoration: none; }
+.btn-link.light { color: var(--text-light); }
+.actions { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; align-items: center; }
+.tagline { font-weight: 600; font-size: 16px; }
+
+/* =============================================== */
+/* --- ОБЩИЕ СТИЛИ (Navbar, Footer, CTA и др.) --- */
+/* =============================================== */
+
+.navbar-section { background: var(--background-light); padding: 16px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+.navbar-container { display: flex; justify-content: space-between; align-items: center; }
+.navbar-brand img { height: 40px; display: block; }
+.navbar-nav { display: flex; list-style: none; gap: 32px; }
+.navbar-nav a { text-decoration: none; color: var(--text-dark); font-size: 16px; }
+
+.cta-section { background-color: var(--primary-color); color: var(--text-light); padding: 80px 0; }
+.cta-container { display: flex; justify-content: space-between; align-items: center; }
+.cta-text h2 { font-family: var(--font-heading); font-size: 44px; font-weight: 500; line-height: 1.2; }
+.cta-text p { font-size: 18px; margin-top: 16px; }
+
+.footer-section { padding: 80px 0; background-color: var(--background-light); }
+.footer-top { display: flex; justify-content: space-between; gap: 64px; margin-bottom: 80px; }
+.footer-about { max-width: 560px; }
+.footer-logo { display: block; height: 40px; margin-bottom: 24px; }
+.footer-links { display: flex; gap: 32px; }
+.footer-links ul { list-style: none; }
+.footer-links a { text-decoration: none; color: var(--text-dark); font-size: 14px; font-weight: 600; padding: 8px 0; display: block; }
+.footer-bottom { border-top: 1px solid var(--border-color-dark); padding-top: 32px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+.social-links { display: flex; gap: 16px; }
+.social-links a { text-decoration: none; color: var(--text-dark); }
+
+/* =============================================== */
+/* --- СТИЛИ ДЛЯ ГЛАВНОЙ СТРАНИЦЫ (index.html) --- */
+/* =============================================== */
+
+.hero-section { background-color: var(--primary-color); color: var(--text-light); min-height: 700px; display: flex; align-items: center; padding: 60px 0; }
+.hero-container { display: flex; align-items: center; gap: 32px; }
+.hero-content { flex: 1 1 50%; }
+.hero-content h1 { font-family: var(--font-heading); font-size: 72px; font-weight: 500; line-height: 1.2; letter-spacing: -0.01em; }
+.hero-content p { font-size: 18px; margin-top: 24px; max-width: 560px; }
+.hero-image-wrapper { flex: 1 1 50%; text-align: center; }
+.hero-image-wrapper img { max-width: 100%; height: auto; border-radius: 12px; }
+
+.timeline-container { text-align: center; }
+.timeline-header { max-width: 600px; margin: 0 auto 48px; }
+.timeline-header h2 { font-family: var(--font-heading); font-size: 52px; font-weight: 500; line-height: 1.2; margin-top: 16px; }
+.timeline-header p { font-size: 18px; margin-top: 16px; }
+.timeline-stages { display: flex; justify-content: center; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
+.stage-item { padding: 16px 0; }
+.stage-item h3 { font-family: var(--font-heading); font-size: 22px; font-weight: 500; }
+.stage-item p { font-size: 16px; margin-top: 8px; }
+.timeline-container .actions { justify-content: center; }
+
+.stats-section { background-color: var(--primary-color); color: var(--text-light); padding: 112px 0; }
+.stats-layout { display: flex; gap: 64px; align-items: center; }
+.stats-content { flex: 1; }
+.stats-content h2 { font-family: var(--font-heading); font-size: 44px; font-weight: 500; line-height: 1.2; max-width: 600px; }
+.stats-content p { font-size: 18px; max-width: 600px; margin-top: 24px; }
+.stats-counters { display: flex; gap: 48px; margin-top: 32px; flex-wrap: wrap; }
+.counter-number { font-family: var(--font-heading); font-size: 52px; font-weight: 500; line-height: 1.2; }
+.counter-item p { font-size: 16px; margin-top: 8px; }
+.stats-image { flex: 1; }
+.stats-image img { width: 100%; height: auto; display: block; border-radius: 8px; }
+
+.testimonial-container { max-width: 768px; margin: 0 auto; text-align: center; }
+.quote { font-family: var(--font-heading); font-size: 28px; font-weight: 500; line-height: 1.4; }
+.author { margin-top: 32px; }
+.author-avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; }
+.author-name { font-weight: 600; font-size: 16px; margin-top: 16px; }
+.author-title { font-size: 16px; }
+
+.partners-section { background-color: var(--background-grey); }
+.logos-container { display: flex; justify-content: center; align-items: center; gap: 64px; flex-wrap: wrap; }
+.logos-container img {
+    max-height: 45px;
+    /* Убираем затемнение и серые оттенки */
+    filter: none; 
+    opacity: 1; 
+    transition: all 0.3s ease;
+}
+.logos-container img:hover {
+    transform: translateY(-2px); /* Легкий эффект поднятия */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Добавляем тень для акцента */
+}
+
+/* ================================================= */
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ PARTNERS.HTML --- */
+/* ================================================= */
+
+.partners-hero-section { background-color: var(--primary-color); color: var(--text-light); padding: 112px 0; }
+.partners-hero-content { max-width: 768px; }
+.partners-hero-section h1 { font-family: var(--font-heading); font-size: 72px; font-weight: 500; line-height: 1.2; margin-top: 16px; }
+.partners-hero-section p { font-size: 18px; margin-top: 24px; }
+
+.logo-grid-section { background-color: var(--background-grey); /* Изменили фон на серый для лучшей видимости темных лого */ }
+.logo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 48px; align-items: center; }
+.logo-item { text-align: center; }
+.logo-item img {
+    max-width: 150px;
+    /* Убираем затемнение и серые оттенки */
+    filter: none;
+    transition: transform 0.3s ease;
+}
+.logo-item img:hover {
+    transform: translateY(-2px); /* Легкий эффект поднятия */
+}
+
+.why-partner-section .why-partner-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 80px; align-items: center; }
+.why-partner-text h2 { font-family: var(--font-heading); font-size: 44px; line-height: 1.2; font-weight: 500; }
+.why-partner-description p { font-size: 18px; line-height: 1.5; }
+.partner-benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 80px; }
+.benefit-item { padding: 24px; }
+.benefit-item h3 { font-family: var(--font-heading); font-size: 22px; margin-bottom: 16px; }
+.benefit-item p { font-size: 16px; }
+.full-width-image img { width: 100%; height: auto; border-radius: 8px; display: block; }
+
+/* =================================================== */
+/* --- СТИЛИ ДЛЯ СТРАНИЦЫ LEADERBOARD.HTML --- */
+/* =================================================== */
+
+.leaderboard-hero-section {
+    padding: 112px 64px; /* Отступы по бокам для контента */
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/leaderboard-hero.png') no-repeat center center;
+    background-size: cover;
+    color: var(--text-light);
+}
+.leaderboard-hero-content {
+    max-width: 560px; /* Ограничиваем ширину текста */
+}
+.leaderboard-hero-content h1 { font-family: var(--font-heading); font-size: 72px; font-weight: 500; line-height: 1.2; }
+.leaderboard-hero-content p { font-size: 18px; margin-top: 24px; }
+
+.leaderboard-intro { max-width: 768px; margin: 0 auto; text-align: center; /* Сделал по центру, как на макете */ }
+.leaderboard-intro h2 { font-family: var(--font-heading); font-size: 72px; font-weight: 500; line-height: 1.2; margin-top: 16px; }
+.leaderboard-intro p { font-size: 18px; margin-top: 24px; }
+.leaderboard-intro .actions { justify-content: center; }
+
+
+.featured-battle-section { padding: 112px 0; }
+.featured-battle-section.red-bg { background-color: var(--primary-color); color: var(--text-light); }
+.battle-container { display: flex; align-items: center; gap: 80px; }
+.battle-container.reverse { flex-direction: row-reverse; }
+.battle-content { flex: 1; }
+.battle-content h2 { font-family: var(--font-heading); font-size: 52px; font-weight: 500; line-height: 1.2; margin-top: 16px; }
+.battle-content p { font-size: 18px; margin-top: 24px; }
+.battle-features { margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.feature-item h3 { font-family: var(--font-heading); font-size: 22px; }
+.feature-item p { font-size: 16px; margin-top: 8px; }
+.battle-image { flex: 1; }
+.battle-image img { width: 100%; height: auto; border-radius: 8px; }
+
+/* ======================================================== */
+/* --- ОБЩИЕ СТИЛИ ДЛЯ АНИМАЦИИ И АДАПТИВНОСТИ --- */
+/* ======================================================== */
+
+.scroll-animate { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.scroll-animate.visible { opacity: 1; transform: translateY(0); }
+.navbar-toggler { display: none; font-size: 24px; background: none; border: none; cursor: pointer; }
+
+@media (max-width: 992px) {
+    .hero-container, .stats-layout, .battle-container, .battle-container.reverse { flex-direction: column; text-align: center; }
+    .hero-content, .stats-content, .battle-content { text-align: center; }
+    .hero-image-wrapper { margin-top: 40px; }
+    .actions { justify-content: center; }
+    .cta-container, .footer-top { flex-direction: column; text-align: center; gap: 32px; }
+    .footer-links { justify-content: center; }
+    .navbar-toggler { display: block; z-index: 10; }
+    .btn-desktop-apply { display: none; }
+    .navbar-nav { display: none; position: absolute; top: 73px; left: 0; right: 0; background-color: white; width: 100%; flex-direction: column; align-items: center; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    .navbar-nav.active { display: flex; }
+
+    .partners-hero-content { margin: 0 auto; text-align: center;}
+    .why-partner-section .why-partner-header { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+    .partner-benefits-grid { grid-template-columns: 1fr; }
+    
+    .leaderboard-hero-section { padding-left: 32px; padding-right: 32px; text-align: center; }
+    .leaderboard-hero-content { margin: 0 auto; }
+    .leaderboard-intro { text-align: center; }
+    .battle-image { margin-top: 40px; }
+}
+
+@media (max-width: 768px) {
+    .section-padding { padding: 60px 0; }
+    .hero-content h1, .partners-hero-section h1, .leaderboard-hero-content h1, .leaderboard-intro h2 { font-size: 44px; }
+    .timeline-header h2, .stats-content h2, .counter-number, .why-partner-text h2, .battle-content h2 { font-size: 36px; }
+    .cta-text h2 { font-size: 32px; }
+    .footer-bottom { flex-direction: column; gap: 16px; }
+    .container { padding: 0 16px; }
+    .logos-container { gap: 32px; }
+    .battle-features { grid-template-columns: 1fr; }
+}
